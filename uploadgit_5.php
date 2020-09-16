@@ -20,7 +20,7 @@ class Produk{
     //ini method
     public function getCetak()
     {
-        return "$this->merk | $this->harga | $this->ukuran | $this->kapasitas | <hr>";
+        return "$this->merk | $this->harga | $this->ukuran";
     }
 
     // mencetak lebih lengkap
@@ -32,7 +32,7 @@ class Produk{
 
 class Laptop extends Produk{
     public function cetakInfo(){
-        $str = "Info Pemesanan {$this->namaBarang} : {$this->getCetak()}";
+        $str = "Info Pemesanan {$this->namaBarang} : {$this->getCetak()} | KAPASITAS : $this->kapasitas <hr>";
         return "<h1>Jenis Laptop</h1> <br> 
                 $str";
     }
@@ -40,7 +40,7 @@ class Laptop extends Produk{
 
 class Aksesoris extends Produk{
     public function cetakInfo(){
-        $str = "Info Pemesanan {$this->namaBarang} : {$this->getCetak()}";
+        $str = "Info Pemesanan {$this->namaBarang} : {$this->getCetak()} <hr>";
         return "<h1>Jenis Aksesoris</h1> <br> 
                 $str";
     }
